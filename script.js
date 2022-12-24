@@ -24,3 +24,29 @@ ctx.beginPath();
 ctx.arc(200, 100, 50, 0, Math.PI * 2);
 ctx.fill();
 ctx.stroke();
+
+// draw effect ----------------------------
+
+const mouse = {
+  x: undefined,
+  y: undefined,
+};
+
+canvas.addEventListener("mousemove", (event) => {
+  mouse.x = event.x;
+  mouse.y = event.y;
+});
+
+function drawCircle(x, y) {
+  ctx.fillStyle = "white";
+  ctx.beginPath();
+  ctx.arc(x, y, 3, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // to clean the canvas
+  drawCircle(mouse.x, mouse.y);
+  requestAnimationFrame(animate);
+}
+animate();
