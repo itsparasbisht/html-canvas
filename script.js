@@ -14,3 +14,13 @@ window.addEventListener("resize", () => {
   ctx.fillStyle = "yellow";
   ctx.fillRect(10, 10, 100, 20);
 });
+
+// creating a circle ----------------------------
+ctx.fillStyle = "green";
+ctx.strokeStyle = "red";
+ctx.lineWidth = 10;
+
+ctx.beginPath();
+ctx.arc(200, 100, 50, 0, Math.PI * 2);
+ctx.fill();
+ctx.stroke();
